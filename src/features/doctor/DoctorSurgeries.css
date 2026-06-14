@@ -1,0 +1,193 @@
+.surgeries-tabs {
+  display: flex;
+  background: white;
+  border-bottom: 2px solid #e5e7eb;
+  margin: 0 1rem;
+  overflow-x: auto;
+}
+
+
+.doctor-surgeries-page .doctor-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+
+.doctor-surgeries-page .doctor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: #FF385C;
+}
+
+
+/* FIX: Center cards + proper grid */
+.doctor-surgeries-page .doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 2rem 2rem;  /* ✅ Equal padding */
+  max-width: 1500px;
+  margin: 0 auto;           /* ✅ Center container */
+  justify-content: center;  /* ✅ Center cards */
+  min-height: 400px;        /* ✅ Prevent collapse */
+}
+
+
+/* Empty state spans full width */
+.doctor-grid .empty-state {
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+/* Single card - center it */
+@media (max-width: 768px) {
+  .doctor-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    justify-items: center;  /* ✅ Center single cards */
+  }
+ 
+  .doctor-card {
+    max-width: 450px;       /* ✅ Limit width */
+    width: 100%;
+  }
+}
+
+
+/* Tabs full width */
+.surgeries-tabs {
+  display: flex;
+  background: white;
+  border-bottom: 2px solid #e5e7eb;
+  margin: 0 2rem 0 2rem;    /* ✅ Full width */
+  padding: 0;
+}
+
+
+/* Doctor page container */
+.doctor-surgeries-page {
+  padding: 0;  /* ✅ Remove extra padding */
+}
+
+
+/* Ensure consistent spacing */
+.doctor-toolbar {
+  padding: 1.5rem 2rem;     /* ✅ Match grid */
+}
+
+
+
+.tab-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+
+.tab-btn.active {
+  color: #FF385C;
+  border-bottom-color: #FF385C;
+  background: #fff7ed;
+}
+
+
+.tab-btn:hover {
+  background: #f8fafc;
+}
+
+
+/* Status Badges */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+.status-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+
+.status-badge.scheduled {
+  background: #dcfce7;
+  color: #166534;
+}
+
+
+/* Priority Badges */
+.priority {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+.priority.critical {
+  background: #fecaca;
+  color: #dc2626;
+}
+
+
+.priority.urgent {
+  background: #fed7aa;
+  color: #c2410c;
+}
+
+
+.priority.normal {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+
+.empty-state h4 {
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+/* SINGLE COLUMN GRID */
+.doctor-grid.single-column {
+  grid-template-columns: 1fr !important;  /* ✅ SINGLE COLUMN */
+  max-width: 600px;                       /* ✅ Center single column */
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  gap: 1.5rem;
+}
+
+
+/* Responsive single column */
+@media (max-width: 768px) {
+  .doctor-grid {
+    grid-template-columns: 1fr !important;
+    padding: 1rem;
+  }
+}

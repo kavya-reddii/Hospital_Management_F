@@ -1,0 +1,59 @@
+.admin-home-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-hero {
+  flex: 1; /* fills remaining space below navbar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* optional dark overlay to improve text contrast */
+.admin-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+.admin-hero-title {
+  position: relative;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.admin-hero-content {
+  position: relative;
+  text-align: center;
+}
+
+
+.admin-hero-subtitle {
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+
+@media (max-width: 640px) {
+  .admin-hero-title {
+    font-size: 2.2rem;
+  }
+}

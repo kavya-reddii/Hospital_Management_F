@@ -1,0 +1,74 @@
+.health-library-mega {
+  position: relative;
+}
+
+.health-library-trigger {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.health-library-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1100px, 92vw);
+  background: #fff;
+  border: 1px solid #e4ecf7;
+  box-shadow: 0 18px 40px rgba(10, 28, 54, 0.18);
+  border-radius: 12px;
+  z-index: 1200;
+  padding: 14px;
+}
+
+.health-library-dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.health-library-dropdown-col {
+  border: 1px solid #edf2f8;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fbfdff;
+}
+
+.health-library-dropdown-col h4 {
+  margin: 0 0 8px;
+  color: #153f67;
+  font-size: 0.95rem;
+}
+
+.health-library-dropdown-col a {
+  display: block;
+  color: #325d85;
+  text-decoration: none;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  padding: 4px 0;
+}
+
+.health-library-dropdown-col a:hover {
+  color: #0a5f98;
+}
+
+.view-all-link {
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+@media (max-width: 920px) {
+  .health-library-dropdown {
+    left: auto;
+    right: 0;
+    transform: none;
+    width: min(560px, 92vw);
+  }
+
+  .health-library-dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,171 @@
+/* Top navbar container */
+.admin-navbar {
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Left side: hospital name + links */
+.admin-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Hospital name */
+.hospital-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #FF385C;
+  margin-right: 1.5rem;
+}
+
+/* Base style for ALL NavLinks (the <a> from NavLink) */
+.nav-link {
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  color: #4B5563;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover state */
+.nav-link:hover {
+  background: #FEF2F2;
+  color: #FF385C;
+  transform: translateY(-1px);
+}
+
+/* Active (highlighted) tab */
+.nav-link-active {
+  background: #FF385C;
+  color: white;
+}
+
+/* Remove default underline from all links inside navbar */
+.admin-navbar a {
+  text-decoration: none;
+}
+
+/* Right side: inbox */
+.admin-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Inbox button */
+.inbox-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #FF385C;
+  background: #FF385C;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(248, 113, 113, 0.35);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.inbox-button:hover {
+  background: #e43352;
+  box-shadow: 0 10px 24px rgba(248, 113, 113, 0.45);
+  transform: translateY(-1px);
+}
+
+.inbox-button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(248, 113, 113, 0.35);
+}
+
+/* Chat / inbox popup */
+.inbox-modal {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  width: 360px;
+  max-height: 70vh;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 60;
+}
+
+.inbox-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inbox-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 600;
+}
+
+.inbox-close {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #6B7280;
+}
+
+.inbox-body {
+  padding: 0.75rem 1rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  color: #4B5563;
+}
+
+/* Example complaint item */
+.complaint-item {
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.complaint-item:last-child {
+  border-bottom: none;
+}
+
+
+.logout-btn {
+  background: linear-gradient(135deg, #FF385C 0%, #E91E63 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 56, 92, 0.3);
+  transition: all 0.2s ease;
+  margin-left: 0.75rem;
+}
+
+.logout-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 56, 92, 0.4);
+}

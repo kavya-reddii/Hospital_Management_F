@@ -1,0 +1,504 @@
+.admin-doctors-page {
+  min-height: 100vh;
+  background: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Search + filter bar */
+.doctor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem 0.75rem;
+}
+
+.doctor-search {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.65rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.doctor-search:focus {
+  border-color: #FF385C;
+  box-shadow: 0 0 0 1px rgba(255, 56, 92, 0.2);
+}
+
+/* Filter button */
+.filter-button {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #FF385C;
+  background: white;
+  color: #FF385C;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(248, 113, 113, 0.2);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.filter-button:hover {
+  background: #FF385C;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Add doctor button */
+.add-doctor-button {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #10B981;
+  background: #10B981;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.add-doctor-button:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Filter modal */
+.filter-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 70;
+}
+
+.filter-card {
+  background: white;
+  width: 320px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.filter-close {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #6B7280;
+}
+
+.filter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  color: #4B5563;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  font-size: 0.9rem;
+}
+
+.filter-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.filter-clear,
+.filter-apply {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.filter-clear {
+  border-color: #E5E7EB;
+  background: white;
+  color: #4B5563;
+}
+
+.filter-apply {
+  border-color: #FF385C;
+  background: #FF385C;
+  color: white;
+}
+
+/* Doctor cards grid */
+.doctor-grid {
+  padding: 1rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 260px));
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+/* Doctor card */
+.doctor-card {
+  position: relative;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  padding: 1rem 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* rectangular, bigger photo on top */
+.doctor-avatar {
+  width: 100%;
+  max-width: 230px;
+  height: 130px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  border: 3px solid #FFE4EA;
+  box-shadow: 0 6px 18px rgba(248, 113, 113, 0.25);
+}
+
+.doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text details below */
+.doctor-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.doctor-dept {
+  margin: 0.25rem 0 0.05rem;
+  font-size: 0.9rem;
+  color: #FF385C;
+  font-weight: 500;
+}
+
+.doctor-place {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6B7280;
+}
+
+/* Edit/Delete actions – themed */
+.doctor-actions {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.doctor-action-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+/* Edit: green like Add button */
+.doctor-action-btn.edit {
+  background: #10B981;
+  color: white;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
+}
+
+.doctor-action-btn.edit:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Delete: pink like filter/add theme */
+.doctor-action-btn.delete {
+  background: #FF385C;
+  color: white;
+  box-shadow: 0 2px 6px rgba(248, 113, 113, 0.35);
+}
+
+.doctor-action-btn.delete:hover {
+  background: #E11D48;
+  transform: translateY(-1px);
+}
+
+/* Validation error text */
+.error-text {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: #DC2626;
+}
+
+/* Add doctor overlay & dialog */
+.add-doctor-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+}
+
+.add-doctor-dialog {
+  width: 720px;
+  max-width: 95vw;
+  max-height: 90vh;
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.75rem;
+  box-sizing: border-box;
+}
+
+.add-doctor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.add-doctor-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.add-doctor-close {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #6B7280;
+}
+
+/* Form body */
+.add-doctor-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.add-doctor-body {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  padding-right: 4px;
+  overflow-y: auto;
+}
+
+.add-doctor-column {
+  flex: 1;
+}
+
+.add-field {
+  margin-bottom: 0.9rem;
+}
+
+.add-field label {
+  display: block;
+  font-size: 0.85rem;
+  color: #4B5563;
+  margin-bottom: 0.25rem;
+}
+
+.add-field input[type="text"],
+.add-field input[type="password"],
+.add-field input[type="date"],
+.add-field input[type="file"] {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 12px;
+  border: 1.5px solid #E5E7EB;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.add-field input:focus {
+  border-color: #FF385C;
+  box-shadow: 0 0 0 1px rgba(255, 56, 92, 0.18);
+}
+
+/* Image preview (if you use it again) */
+.add-doctor-preview {
+  margin-top: 0.5rem;
+  width: 100%;
+  max-width: 220px;
+  height: 130px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
+}
+
+.add-doctor-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer buttons */
+.add-doctor-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.add-cancel,
+.add-submit {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.add-cancel {
+  border-color: #E5E7EB;
+  background: white;
+  color: #4B5563;
+}
+
+.add-submit {
+  border-color: #FF385C;
+  background: #FF385C;
+  color: white;
+  box-shadow: 0 8px 20px rgba(248, 113, 113, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .doctor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .doctor-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 1.25rem 0.5rem;
+  }
+
+  .doctor-grid {
+    grid-template-columns: 1fr;
+    padding: 0.75rem 1.25rem 1.5rem;
+  }
+}
+
+.add-doctor-body { display: flex; gap: 1.25rem; }
+.add-doctor-column { flex: 1; }
+/* Dropdowns + date in forms (doctor/patient/appointment) */
+.add-field select,
+.add-field input[type="date"],
+.add-field input[type="time"] {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border-radius: 12px;
+  border: 1.5px solid #E5E7EB;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  appearance: none; /* remove default arrow in some browsers */
+  background-image: linear-gradient(45deg, transparent 50%, #9CA3AF 50%),
+    linear-gradient(135deg, #9CA3AF 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.add-field select:focus,
+.add-field input[type="date"]:focus,
+.add-field input[type="time"]:focus {
+  border-color: #FF385C;
+  box-shadow: 0 0 0 1px rgba(255, 56, 92, 0.18);
+}
+
+/* Toolbar date filter */
+.doctor-toolbar .doctor-search[type="date"] {
+  max-width: 200px;
+  padding-right: 2.2rem; /* space for arrow */
+}
+
+/* Make selects in toolbar look consistent too */
+.doctor-toolbar select {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #E5E7EB;
+  font-size: 0.9rem;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  background-color: #ffffff;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #9CA3AF 50%),
+    linear-gradient(135deg, #9CA3AF 50%, transparent 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.doctor-toolbar select:focus,
+.doctor-toolbar .doctor-search[type="date"]:focus {
+  border-color: #FF385C;
+  box-shadow: 0 0 0 1px rgba(255, 56, 92, 0.18);
+}
+
+
+@media (max-width: 768px) {
+  .add-doctor-dialog {
+    width: 100%;
+    max-width: 95vw;
+    padding: 1.25rem;
+  }
+
+  .add-doctor-body {
+    flex-direction: column;
+  }
+}

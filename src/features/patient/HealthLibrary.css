@@ -1,0 +1,195 @@
+.health-library-page {
+  min-height: 100vh;
+  background: #f3f7fc;
+}
+
+.health-library-hero,
+.health-article-hero {
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.health-library-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(2, 19, 39, 0.84), rgba(0, 91, 140, 0.46));
+}
+
+.health-library-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  color: #fff;
+}
+
+.health-library-hero-content h1 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+}
+
+.health-library-hero-content p {
+  margin: 0;
+}
+
+.crumb,
+.crumb a {
+  color: #d8e6f8;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.health-library-content {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px 28px;
+}
+
+.health-library-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.health-tab {
+  text-decoration: none;
+  color: #194a78;
+  background: #fff;
+  border: 1px solid #d9e4f1;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.92rem;
+}
+
+.health-tab.active {
+  background: #0b5d97;
+  color: #fff;
+  border-color: #0b5d97;
+}
+
+.health-library-card,
+.health-article-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(16, 44, 80, 0.08);
+  padding: 18px;
+}
+
+.health-library-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.health-library-card-header h2 {
+  margin: 0;
+  color: #163f68;
+}
+
+.health-library-card-header span {
+  color: #5b6f86;
+}
+
+.health-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.health-library-item {
+  text-decoration: none;
+  color: #123f6d;
+  border: 1px solid #e7edf4;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #f9fbfe;
+}
+
+.health-library-item:hover {
+  background: #eef6ff;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.health-article-main,
+.health-article-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.health-article-card h2,
+.health-article-card h3 {
+  margin: 0 0 10px;
+  color: #153f67;
+}
+
+.health-article-card p,
+.health-article-card li,
+.doctor-item span,
+.doctor-item small {
+  color: #4f657f;
+}
+
+.health-article-card ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 7px;
+}
+
+.doctor-item {
+  border-bottom: 1px solid #ebf1f8;
+  padding: 9px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.doctor-item:last-child {
+  border-bottom: none;
+}
+
+.primary-btn {
+  margin-top: 12px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #0f67a4;
+  color: #fff;
+  cursor: pointer;
+}
+
+.health-article-card.emergency {
+  background: linear-gradient(135deg, #0c3e6a, #0c5a8e);
+}
+
+.health-article-card.emergency h3,
+.health-article-card.emergency p {
+  color: #fff;
+}
+
+.health-article-card.emergency a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+@media (max-width: 920px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+}

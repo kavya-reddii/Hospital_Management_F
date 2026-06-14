@@ -1,0 +1,92 @@
+.discover-page {
+  min-height: 100vh;
+  background: #f4f8fc;
+}
+
+.discover-hero {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.discover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 28, 64, 0.72), rgba(0, 98, 162, 0.38));
+}
+
+.discover-hero-content {
+  position: relative;
+  max-width: 760px;
+  padding: 26px 42px;
+}
+
+.discover-hero-content h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.discover-hero-content p {
+  margin: 0;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.discover-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 36px;
+}
+
+.discover-section {
+  margin-bottom: 24px;
+}
+
+.discover-section h2 {
+  margin: 0 0 14px;
+  color: #133f6a;
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.discover-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(13, 41, 76, 0.08);
+}
+
+.discover-card h3 {
+  margin: 0 0 8px;
+  color: #19568a;
+  font-size: 1.05rem;
+}
+
+.discover-card p {
+  margin: 0;
+  color: #3b536e;
+}
+
+.discover-grid.stats .discover-card.stat h3 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+.discover-status {
+  margin: 0 0 12px;
+  color: #355879;
+}
+
+.discover-status.error {
+  color: #c0392b;
+}
